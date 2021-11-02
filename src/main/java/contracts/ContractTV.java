@@ -4,7 +4,14 @@ import entities.Person;
 
 import java.time.LocalDate;
 
+/**
+ * TV contract model
+ * @see ContractDefault
+ */
 public class ContractTV extends ContractDefault {
+    /**
+     * Amount of channels
+     */
     protected int aChannel;
 
     public int getaChannel() {
@@ -15,6 +22,9 @@ public class ContractTV extends ContractDefault {
         this.aChannel = aChannel;
     }
 
+    /**
+     * Names of channels
+     */
     protected String[] packageChannel;
 
     public String[] getPackageChannel() {

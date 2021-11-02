@@ -4,8 +4,15 @@ import entities.Person;
 
 import java.time.LocalDate;
 
+/**
+ * Mobile contract model
+ * @see ContractDefault
+ */
 public class ContractMobile extends ContractDefault {
 
+    /**
+     * Amount of minutes
+     */
     protected int aMinutes;
 
     public int getaMinutes() {
@@ -16,6 +23,9 @@ public class ContractMobile extends ContractDefault {
         this.aMinutes = aMinutes;
     }
 
+    /**
+     * Amount of sms
+     */
     protected int aSMS;
 
     public int getaSMS() {
@@ -26,6 +36,9 @@ public class ContractMobile extends ContractDefault {
         this.aSMS = aSMS;
     }
 
+    /**
+     * Amount of gb traffic
+     */
     protected int gbTraffic;
 
     public int getGbTraffic() {

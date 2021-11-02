@@ -5,8 +5,14 @@ import helpers.Gender;
 import java.time.LocalDate;
 import java.time.Year;
 
+/**
+ * Owner model
+ */
 public class Person {
 
+    /**
+     * ID of human
+     */
     protected int id;
 
     public int getId() {
@@ -17,6 +23,9 @@ public class Person {
         this.id = id;
     }
 
+    /**
+     * human name
+     */
     protected String name;
 
     public String getName() {
@@ -27,6 +36,9 @@ public class Person {
         this.name = name;
     }
 
+    /**
+     * date of birthday
+     */
     protected LocalDate dateOfBirthday;
 
     public LocalDate getDateOfBirthday() {
@@ -37,6 +49,9 @@ public class Person {
         this.dateOfBirthday = dateOfBirthday;
     }
 
+    /**
+     * human gender
+     */
     protected Gender gender;
 
     public Gender getGender() {
@@ -47,6 +62,9 @@ public class Person {
         this.gender = gender;
     }
 
+    /**
+     * series and number of passport
+     */
     protected String snPassport;
 
     public String getSnPassport() {
@@ -57,6 +75,10 @@ public class Person {
         this.snPassport = snPassport;
     }
 
+    /**
+     * Method of getting human age
+     * @return
+     */
     public int getAge(){
         return Year.now().getValue() - getDateOfBirthday().getYear();
     }

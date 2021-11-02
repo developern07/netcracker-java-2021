@@ -4,8 +4,14 @@ import entities.Person;
 
 import java.time.LocalDate;
 
+/**
+ * Contract model
+ */
 public class ContractDefault{
 
+    /**
+     * Contract ID
+     */
     protected int id;
 
     public int getId() {
@@ -16,6 +22,9 @@ public class ContractDefault{
         this.id = id;
     }
 
+    /**
+     * Date of start contract
+     */
     protected LocalDate dOfStartContract;
 
     public LocalDate getdOfStartContract() {
@@ -26,6 +35,9 @@ public class ContractDefault{
         this.dOfStartContract = dOfStartContract;
     }
 
+    /**
+     * Date of end contract
+     */
     protected LocalDate dOfEndContract;
 
     public LocalDate getdOfEndContract() {
@@ -36,6 +48,9 @@ public class ContractDefault{
         this.dOfEndContract = dOfEndContract;
     }
 
+    /**
+     * Number of contract
+     */
     protected int nOfContract;
 
     public int getnOfContract() {
@@ -46,6 +61,9 @@ public class ContractDefault{
         this.nOfContract = nOfContract;
     }
 
+    /**
+     * Contract owner
+     */
     protected Person human;
 
     public Person getHuman() {

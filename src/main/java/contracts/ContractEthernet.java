@@ -4,8 +4,15 @@ import entities.Person;
 
 import java.time.LocalDate;
 
+/**
+ * Ethernet contract model
+ * @see ContractDefault
+ */
 public class ContractEthernet extends ContractDefault {
 
+    /**
+     * Speed connection
+     */
     protected int speedConnection;
 
     public int getSpeedConnection() {
