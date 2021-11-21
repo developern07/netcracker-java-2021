@@ -4,8 +4,11 @@ import contracts.ContractDefault;
 import contracts.ContractEthernet;
 import contracts.ContractMobile;
 import contracts.ContractTV;
+import sorters.ISorter;
 
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.function.Predicate;
 
 /**
  * Repository model
@@ -15,6 +18,11 @@ public class Repository {
      * array of contracts
      */
     protected ContractDefault[] array;
+
+    /**
+     * Sorter repository
+     */
+    protected ISorter sorter;
 
     /**
      * Constructor repository
@@ -64,6 +72,48 @@ public class Repository {
             }
         }
         return null;
+    }
+
+    public <T extends ContractDefault> T[] getAll() { return (T[]) array; }
+
+    /**
+     * Method of find contract in repository
+     * @param filter
+     * @param <T>
+     * @return
+     */
+    public <T extends ContractDefault> Repository searchByFilter(Predicate<T> filter){
+        Repository rep = new Repository();
+        boolean bool=false;
+        int j=0;
+        for (ContractDefault contractDefault : array) {
+            if (contractDefault != null && filter.test((T) contractDefault)) {
+                rep.add(contractDefault);
+                j++;
+            }
+        }
+        if (j!=0) { bool = true; }
+        if (bool){
+            if (j>1){
+                System.out.println("Found " + j + " contracts");}
+            if (j==1){
+                System.out.println("Found " + j + " contract");
+            }
+            return rep;
+        }
+        else {
+            System.out.println("No contracts were found for the specified criterion.");
+        }
+        return rep;
+    }
+
+    /**
+     * Method that sorts the repository
+     * @param cmp
+     * @param <T>
+     */
+    public <T extends ContractDefault> void sortBy(Comparator<T> cmp){
+        sorter.sort((T[])array, cmp);
     }
 
     @Override

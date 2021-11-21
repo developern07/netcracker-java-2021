@@ -5,8 +5,14 @@ import contracts.ContractDefault;
 import java.util.Comparator;
 import java.util.Random;
 
+/**
+ * Quick sorter model
+ */
 public class QuickSorter implements ISorter {
 
+    /**
+     * Random value
+     */
     private static final Random RND = new Random();
 
     @Override
@@ -15,6 +21,14 @@ public class QuickSorter implements ISorter {
         return element;
     }
 
+    /**
+     * Method of quick sort
+     * @param element
+     * @param begin
+     * @param end
+     * @param cmp
+     * @param <T>
+     */
     private <T extends ContractDefault> void qsort(T[] element, int begin, int end, Comparator<T> cmp) {
         if (end > begin) {
             int index = partition(element, begin, end, cmp);
@@ -23,6 +37,15 @@ public class QuickSorter implements ISorter {
         }
     }
 
+    /**
+     * Method of partition
+     * @param element
+     * @param begin
+     * @param end
+     * @param cmp
+     * @param <T>
+     * @return
+     */
     private <T extends ContractDefault> int partition(T[] element, int begin, int end, Comparator<T> cmp) {
         int index = begin + RND.nextInt(end - begin + 1);
         T pivot = element[index];
@@ -36,6 +59,13 @@ public class QuickSorter implements ISorter {
         return (index);
     }
 
+    /**
+     * Method of swap elements
+     * @param element
+     * @param i
+     * @param j
+     * @param <T>
+     */
     private <T extends ContractDefault> void swap(T[] element, int i, int j) {
         T tmp = element[i];
         element[i] = element[j];
