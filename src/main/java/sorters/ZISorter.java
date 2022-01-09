@@ -7,6 +7,6 @@ import java.util.Comparator;
 /**
  * Sorter interface
  */
-public interface ISorter {
+public interface ZISorter {
     public <T extends ContractDefault> T[] sort (T[] element, Comparator<T> cmp);
 }

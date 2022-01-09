@@ -8,7 +8,7 @@ import java.util.Random;
 /**
  * Quick sorter model
  */
-public class QuickSorter implements ISorter {
+public class QuickSorter implements ZISorter {
 
     /**
      * Random value

@@ -4,7 +4,8 @@ import contracts.ContractDefault;
 import contracts.ContractEthernet;
 import contracts.ContractMobile;
 import contracts.ContractTV;
-import sorters.ISorter;
+import reflection.AutoInjectable;
+import sorters.ZISorter;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -22,7 +23,8 @@ public class Repository {
     /**
      * Sorter repository
      */
-    protected ISorter sorter;
+    @AutoInjectable
+    protected ZISorter sorter;
 
     /**
      * Constructor repository

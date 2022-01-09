@@ -6,7 +6,7 @@ import functions.Message;
 /**
  * Interface validator
  */
-public interface IValidator {
+public interface ZIValidator {
     /**
      * Method of getting result of check
      * @param contract

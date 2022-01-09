@@ -7,7 +7,7 @@ import java.util.Comparator;
 /**
  * Bubble sorter model
  */
-public class BubbleSorter implements ISorter{
+public class BubbleSorter implements ZISorter {
     /**
      * Method of swap elements
      * @param element

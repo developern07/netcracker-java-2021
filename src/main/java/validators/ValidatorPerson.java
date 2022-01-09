@@ -6,9 +6,9 @@ import helpers.CheckStatus;
 
 /**
  * Model human validator
- * @see validators.IValidator
+ * @see ZIValidator
  */
-public class ValidatorPerson implements IValidator{
+public class ValidatorPerson implements ZIValidator {
     @Override
     public <T extends ContractDefault> Message validate(T contract) {
         if (contract.getHuman().getId()<=0){

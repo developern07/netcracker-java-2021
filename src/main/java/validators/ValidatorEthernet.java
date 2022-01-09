@@ -7,9 +7,9 @@ import helpers.CheckStatus;
 
 /**
  * Model ethernet validator
- * @see validators.IValidator
+ * @see ZIValidator
  */
-public class ValidatorEthernet implements IValidator{
+public class ValidatorEthernet implements ZIValidator {
     @Override
     public <T extends ContractDefault> Message validate(T contract) {
         if (((ContractEthernet)contract).getSpeedConnection() <= 0){

@@ -7,9 +7,9 @@ import helpers.CheckStatus;
 
 /**
  * Model mobile validator
- * @see validators.IValidator
+ * @see ZIValidator
  */
-public class ValidatorMobile implements IValidator{
+public class ValidatorMobile implements ZIValidator {
 
     @Override
     public <T extends ContractDefault> Message validate(T contract) {

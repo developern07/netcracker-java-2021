@@ -7,9 +7,9 @@ import helpers.CheckStatus;
 
 /**
  * Model TV validator
- * @see validators.IValidator
+ * @see ZIValidator
  */
-public class ValidatorTV implements IValidator{
+public class ValidatorTV implements ZIValidator {
     @Override
     public <T extends ContractDefault> Message validate(T contract) {
         if (((ContractTV)contract).getPackageChannel().length <= 1){

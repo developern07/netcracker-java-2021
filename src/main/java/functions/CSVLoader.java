@@ -11,6 +11,7 @@ import contracts.ContractTV;
 import entities.Person;
 import helpers.CheckStatus;
 import helpers.Gender;
+import reflection.AutoInjectable;
 import repository.Repository;
 import validators.*;
 
@@ -23,7 +24,8 @@ import java.util.List;
 
 public class CSVLoader {
 
-    protected List<IValidator> validatorList = new ArrayList<>();
+    @AutoInjectable
+    protected List<ZIValidator> validatorList = new ArrayList<>();
     protected List<Message> messages = new ArrayList<>();
     protected ContractDefault contract;
     /**
@@ -58,31 +60,31 @@ public class CSVLoader {
             String[] addInfo = nextLine[7].split(", ");
 
             messages = new ArrayList<>();
-            validatorList=new ArrayList<>();
-            DefaultValidator defaultValidator = new DefaultValidator();
-            ValidatorPerson validatorPerson = new ValidatorPerson();
-            validatorList.add(defaultValidator);
-            validatorList.add(validatorPerson);
+            //validatorList=new ArrayList<>();
+            //DefaultValidator defaultValidator = new DefaultValidator();
+            //ValidatorPerson validatorPerson = new ValidatorPerson();
+            //validatorList.add(defaultValidator);
+            //validatorList.add(validatorPerson);
 
             switch (typeOfContract){
                 case ("Ethernet") -> {
                     int speed = Integer.parseInt(nextLine[7]);
                     //contracts.add(new ContractEthernet(numberString, LocalDate.parse(nextLine[0], format), LocalDate.parse(nextLine[1], format), numberString, human, speed));
                     contract = new ContractEthernet(numberString, LocalDate.parse(nextLine[0], format), LocalDate.parse(nextLine[1], format), numberString, human, speed);
-                    ValidatorEthernet validatorEthernet = new ValidatorEthernet();
-                    validatorList.add(validatorEthernet);
+                    //ValidatorEthernet validatorEthernet = new ValidatorEthernet();
+                    //validatorList.add(validatorEthernet);
                 }
                 case ("Mobile") -> {
                     //contracts.add(new ContractMobile(numberString, LocalDate.parse(nextLine[0], format), LocalDate.parse(nextLine[1], format), numberString, human, Integer.parseInt(addInfo[0]), Integer.parseInt(addInfo[1]), Integer.parseInt(addInfo[2])));
                     contract = new ContractMobile(numberString, LocalDate.parse(nextLine[0], format), LocalDate.parse(nextLine[1], format), numberString, human, Integer.parseInt(addInfo[0]), Integer.parseInt(addInfo[1]), Integer.parseInt(addInfo[2]));
-                    ValidatorMobile validatorMobile = new ValidatorMobile();
-                    validatorList.add(validatorMobile);
+                    //ValidatorMobile validatorMobile = new ValidatorMobile();
+                    //validatorList.add(validatorMobile);
                 }
                 case ("TV") -> {
                     //contracts.add(new ContractTV(numberString, LocalDate.parse(nextLine[0], format), LocalDate.parse(nextLine[1], format), numberString, human, addInfo.length-1, addInfo));
                     contract = new ContractTV(numberString, LocalDate.parse(nextLine[0], format), LocalDate.parse(nextLine[1], format), numberString, human, addInfo.length-1, addInfo);
-                    ValidatorTV validatorTV = new ValidatorTV();
-                    validatorList.add(validatorTV);
+                    //ValidatorTV validatorTV = new ValidatorTV();
+                    //validatorList.add(validatorTV);
                 }
             }
             messages = check(contract,validatorList);
@@ -117,9 +119,9 @@ public class CSVLoader {
      * @return messageList
      * @throws ClassNotFoundException
      */
-    public static <T extends ContractDefault> List<Message> check(T contract, List<IValidator> validatorList) throws ClassNotFoundException {
+    public static <T extends ContractDefault> List<Message> check(T contract, List<ZIValidator> validatorList) throws ClassNotFoundException {
         List<Message> messageList = new ArrayList<>();
-        for (IValidator v: validatorList) {
+        for (ZIValidator v: validatorList) {
             if (v.getAppliableFor().isInstance(contract)) {
                 messageList.add(v.validate(contract));
             }
