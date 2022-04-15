@@ -14,6 +14,10 @@ public class ContractDefault{
      */
     protected int id;
 
+    public ContractDefault() {
+
+    }
+
     public int getId() {
         return id;
     }
