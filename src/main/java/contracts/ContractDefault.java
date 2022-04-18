@@ -1,13 +1,23 @@
 package contracts;
 
 import entities.Person;
+import helpers.Gender;
+import xml.LocalDateAdapter;
 
+import javax.xml.bind.annotation.XmlAnyElement;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
  * Contract model
  */
-public class ContractDefault{
+@XmlRootElement
+@XmlSeeAlso({Gender.class, Person.class, LocalDate.class})
+public class ContractDefault implements Serializable {
 
     /**
      * Contract ID
@@ -18,6 +28,7 @@ public class ContractDefault{
 
     }
 
+    @XmlElement
     public int getId() {
         return id;
     }
@@ -31,6 +42,8 @@ public class ContractDefault{
      */
     protected LocalDate dOfStartContract;
 
+    @XmlElement
+    @XmlJavaTypeAdapter(value = LocalDateAdapter.class)
     public LocalDate getdOfStartContract() {
         return dOfStartContract;
     }
@@ -44,6 +57,8 @@ public class ContractDefault{
      */
     protected LocalDate dOfEndContract;
 
+    @XmlElement
+    @XmlJavaTypeAdapter(value = LocalDateAdapter.class)
     public LocalDate getdOfEndContract() {
         return dOfEndContract;
     }
@@ -57,6 +72,7 @@ public class ContractDefault{
      */
     protected int nOfContract;
 
+    @XmlElement
     public int getnOfContract() {
         return nOfContract;
     }
@@ -70,6 +86,7 @@ public class ContractDefault{
      */
     protected Person human;
 
+    @XmlAnyElement
     public Person getHuman() {
         return human;
     }

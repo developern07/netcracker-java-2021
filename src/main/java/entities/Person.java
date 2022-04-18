@@ -1,13 +1,18 @@
 package entities;
 
 import helpers.Gender;
+import xml.LocalDateAdapter;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.LocalDate;
 import java.time.Year;
 
 /**
  * Owner model
  */
+@XmlRootElement
 public class Person {
 
     /**
@@ -15,6 +20,7 @@ public class Person {
      */
     protected int id;
 
+    @XmlElement
     public int getId() {
         return id;
     }
@@ -28,6 +34,7 @@ public class Person {
      */
     protected String name;
 
+    @XmlElement
     public String getName() {
         return name;
     }
@@ -41,6 +48,8 @@ public class Person {
      */
     protected LocalDate dateOfBirthday;
 
+    @XmlElement
+    @XmlJavaTypeAdapter(value = LocalDateAdapter.class)
     public LocalDate getDateOfBirthday() {
         return dateOfBirthday;
     }
@@ -54,6 +63,7 @@ public class Person {
      */
     protected Gender gender;
 
+    @XmlElement
     public Gender getGender() {
         return gender;
     }
@@ -67,6 +77,7 @@ public class Person {
      */
     protected String snPassport;
 
+    @XmlElement
     public String getSnPassport() {
         return snPassport;
     }
@@ -89,5 +100,8 @@ public class Person {
         setDateOfBirthday(dateOfBirthday);
         setGender(gender);
         setSnPassport(snPassport);
+    }
+
+    public Person() {
     }
 }

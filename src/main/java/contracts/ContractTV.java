@@ -2,18 +2,22 @@ package contracts;
 
 import entities.Person;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.time.LocalDate;
 
 /**
  * TV contract model
  * @see ContractDefault
  */
+@XmlRootElement
 public class ContractTV extends ContractDefault {
     /**
      * Amount of channels
      */
     protected int aChannel;
 
+    @XmlElement
     public int getaChannel() {
         return aChannel;
     }
@@ -27,6 +31,7 @@ public class ContractTV extends ContractDefault {
      */
     protected String[] packageChannel;
 
+    @XmlElement
     public String[] getPackageChannel() {
         return packageChannel;
     }

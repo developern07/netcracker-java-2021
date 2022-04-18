@@ -2,12 +2,15 @@ package contracts;
 
 import entities.Person;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.time.LocalDate;
 
 /**
  * Ethernet contract model
  * @see ContractDefault
  */
+@XmlRootElement
 public class ContractEthernet extends ContractDefault {
 
     /**
@@ -15,6 +18,7 @@ public class ContractEthernet extends ContractDefault {
      */
     protected int speedConnection;
 
+    @XmlElement
     public int getSpeedConnection() {
         return speedConnection;
     }

@@ -2,12 +2,15 @@ package contracts;
 
 import entities.Person;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.time.LocalDate;
 
 /**
  * Mobile contract model
  * @see ContractDefault
  */
+@XmlRootElement
 public class ContractMobile extends ContractDefault {
 
     /**
@@ -15,6 +18,7 @@ public class ContractMobile extends ContractDefault {
      */
     protected int aMinutes;
 
+    @XmlElement
     public int getaMinutes() {
         return aMinutes;
     }
@@ -28,6 +32,7 @@ public class ContractMobile extends ContractDefault {
      */
     protected int aSMS;
 
+    @XmlElement
     public int getaSMS() {
         return aSMS;
     }
@@ -41,6 +46,7 @@ public class ContractMobile extends ContractDefault {
      */
     protected int gbTraffic;
 
+    @XmlElement
     public int getGbTraffic() {
         return gbTraffic;
     }

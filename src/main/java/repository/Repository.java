@@ -127,6 +127,8 @@ public class Repository {
                 System.out.println("Mobile Contract:\n ID: " + array[i].getId() + ", date of start - date of end contract: " + array[i].getdOfStartContract() + " - " + array[i].getdOfStartContract() + "\n Name of Human: " + array[i].getHuman().getName() + ", Age: " + array[i].getHuman().getAge() + ", Passport: " + array[i].getHuman().getSnPassport() + "\n Amount of SMS: " + ((ContractMobile) array[i]).getaSMS() + ", amount of Minutes: " + ((ContractMobile) array[i]).getaMinutes() + ", amount of Gb Traffic: " + ((ContractMobile) array[i]).getGbTraffic());
             } else if (array[i] instanceof ContractTV) {
                 System.out.println("TV Contract:\n ID: " + array[i].getId() + ", date of start - date of end contract: " + array[i].getdOfStartContract() + " - " + array[i].getdOfEndContract() + "\n Name of Human: " + array[i].getHuman().getName() + ", Age: " + array[i].getHuman().getAge() + ", Passport: " + array[i].getHuman().getSnPassport() + "\n Channels: " + Arrays.toString(((ContractTV) array[i]).getPackageChannel()));
+            } else {
+                System.out.println("Default Contract:\n ID: " + array[i].getId() + ", date of start - date of end contract: " + array[i].getdOfStartContract() + " - " + array[i].getdOfEndContract() + "\n Name of Human: " + array[i].getHuman().getName() + ", Age: " + array[i].getHuman().getAge() + ", Passport: " + array[i].getHuman().getSnPassport());
             }
         }
         return null;

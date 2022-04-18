@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contractsJAXB>
+    <contractList>
+        <person>
+            <dateOfBirthday>2000-01-01</dateOfBirthday>
+            <gender>Male</gender>
+            <id>1</id>
+            <name>Petrov Petr Petrovich</name>
+            <snPassport>2014 123456</snPassport>
+        </person>
+        <id>1</id>
+        <dOfEndContract>2022-01-01</dOfEndContract>
+        <dOfStartContract>2020-01-01</dOfStartContract>
+        <nOfContract>1</nOfContract>
+    </contractList>
+    <contractList>
+        <person>
+            <dateOfBirthday>2001-02-02</dateOfBirthday>
+            <gender>Male</gender>
+            <id>2</id>
+            <name>Ivanov Ivan Ivanovich</name>
+            <snPassport>2015 123456</snPassport>
+        </person>
+        <id>2</id>
+        <dOfEndContract>2023-01-01</dOfEndContract>
+        <dOfStartContract>2019-12-01</dOfStartContract>
+        <nOfContract>2</nOfContract>
+    </contractList>
+    <contractList>
+        <person>
+            <dateOfBirthday>2000-01-01</dateOfBirthday>
+            <gender>Male</gender>
+            <id>1</id>
+            <name>Petrov Petr Petrovich</name>
+            <snPassport>2014 123456</snPassport>
+        </person>
+        <id>3</id>
+        <dOfEndContract>2025-01-01</dOfEndContract>
+        <dOfStartContract>2018-12-12</dOfStartContract>
+        <nOfContract>3</nOfContract>
+    </contractList>
+</contractsJAXB>
